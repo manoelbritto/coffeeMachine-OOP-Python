@@ -31,12 +31,12 @@ def machine():
         # get the ingredients
         ingredients = menu.find_drink(client_option)
 
-        check_coffe = coffee_maker.is_resource_sufficient(ingredients)
-        if check_coffe:
+        # check_coffe = coffee_maker.is_resource_sufficient(ingredients)
+        if coffee_maker.is_resource_sufficient(ingredients):
             # process coin
             print(f"Price is {ingredients.cost}")
-            process = money.make_payment(ingredients.cost)
-            if process:
+            # process = money.make_payment(ingredients.cost)
+            if money.make_payment(ingredients.cost):
                 coffee_maker.make_coffee(ingredients)
 
 
